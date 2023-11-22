@@ -1,27 +1,23 @@
 services:
-  - type: web
-    runtime: nodejs
-    branch: main
-    region: frankfurt
-    buildCommand: |
-      npm install
-      npm run build
-    startCommand: npm run start
-
-    envVars:
-    - name: NODE_ENV
-      value: production
-    - name: PORT
-      value: 3000
-  # setting db
-databases:
-    - name: testdb
-      type: database
-      region: frankfurt
-      env:
-        - name: DB_USER
-          value: admin
-        - name: DB_PASS
-          value: admin
-        - name: DB_NAME
-          value: admin
+- type: web
+  name: nodejs-blueprint-render
+  env: node
+  repo: https://github.com/eduardevs/serverless_cloud_blueprint_render.git
+  buildCommand: npm
+  startCommand: npm run start
+  plan: free
+  autoDeploy: true
+  envVars:
+  - key: DATABASE_URL
+    sync: false
+# databases:
+#     - name: testdb
+#       type: database
+#       region: frankfurt
+#       env:
+#         - name: DB_USER
+#           value: admin
+#         - name: DB_PASS
+#           value: admin
+#         - name: DB_NAME
+#           value: admin
