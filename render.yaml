@@ -8,10 +8,10 @@ services:
   startCommand: npm run start
   plan: free
   autoDeploy: true
-  envVars:
-  - key: DATABASE_URL
-    sync: false
-    
+  # envVars:
+  # - key: DATABASE_URL
+  #   sync: false
+
 databases:
   - name: database
     plan: free
