@@ -1,0 +1,26 @@
+services:
+  type: web
+  runtime: nodejs
+  branch: main
+  region: frankfurt
+  buildCommand: npm install && npm run build
+  startCommand: npm run start
+  envVars:
+    - name: NODE_ENV
+      value: production
+    - name: PORT
+      value: 3000
+# setting db
+databases:
+  - name: testdb
+    type: postgredb
+    version: 4.4
+    storage: 10
+    region: frankfurt
+    env:
+      - name: DB_USER
+        value: admin
+      - name: DB_PASS
+        value: admin
+      - name: DB_NAME
+        value: admin
