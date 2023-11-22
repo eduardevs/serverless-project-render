@@ -1,15 +1,22 @@
 services:
 - type: web
+  runtime: node
   name: nodejs-blueprint-render
-  env: node
+  # env: node
   repo: https://github.com/eduardevs/serverless_cloud_blueprint_render.git
-  buildCommand: npm
+  buildCommand: npm install
   startCommand: npm run start
   plan: free
   autoDeploy: true
   envVars:
   - key: DATABASE_URL
     sync: false
+- 
+  - name: database
+    plan: free
+    region: frankfurt
+    ipAllowList: [] # only allow internal connections
+    postgresMajorVersion: 15
 # databases:
 #     - name: testdb
 #       type: database
