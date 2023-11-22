@@ -16,9 +16,7 @@ services:
   # setting db
 databases:
     - name: testdb
-      type: postgredb
-      version: 4.4
-      storage: 10
+      type: database
       region: frankfurt
       env:
         - name: DB_USER
