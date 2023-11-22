@@ -1,0 +1,20 @@
+services:
+  - name: cloud-web
+    type: web
+    runtime: node
+buildCommand: npm install
+startCommand: npm start
+repo: BLABLABLALBA
+branch: main
+plan: free
+envVars:
+
+
+
+
+databases:
+- name : cloud-db
+databaseName
+DB_USER
+region:
+plan

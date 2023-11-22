@@ -3,7 +3,7 @@ services:
   runtime: node
   name: nodejs-blueprint-render
   # env: node
-  repo: https://github.com/eduardevs/serverless_cloud_blueprint_render.git
+  repo: https://github.com/eduardevs/serverless-project-render.git
   buildCommand: npm install
   startCommand: npm run start
   plan: free
@@ -31,3 +31,5 @@ databases:
 #           value: admin
 #         - name: DB_NAME
 #           value: admin
+
+
